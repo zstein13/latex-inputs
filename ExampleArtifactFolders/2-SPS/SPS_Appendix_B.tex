@@ -1,0 +1,114 @@
+%%% SVN stuff
+\svnidlong
+{$HeadURL: https://svn.riouxsvn.com/kneadlatxinputs/ExampleArtifactFolders/2%20-%20SPS/SPS_Appendix_B.tex $}
+{$LastChangedDate: 2024-02-21 22:21:17 -0500 (Wed, 21 Feb 2024) $}
+{$LastChangedRevision: 58 $}
+{$LastChangedBy: KneadProject $}
+\svnid{$Id: SPS_Appendix_B.tex 58 2024-02-22 03:21:17Z KneadProject $}
+
+\chapter{Key Performance Parameters and System Attributes}
+\label{lab:chap_Bspec}
+
+This Appendix provides the key performance parameters and key system attributes, summarized in a short list for easy review.
+
+\KNEADSECTIONNEWPAGE
+\section{Key Performance Parameters}
+\label{lab:sec_Bspec_KPP}
+
+{% opening brace to group \baselineskip to tighten up rows in the table
+\singlespace
+\renewcommand{\baselinestretch}{1.0}%
+\renewcommand{\arraystretch}{1.0}%
+
+\newlength{\KppVspace}
+\setlength{\KppVspace}{4 pt}
+
+\newlength{\KppRightColumnWidth}
+\setlength{\KppRightColumnWidth}{4.5in}% adjust as necessary based on source definitions
+	
+\begin{center}
+
+\begin{longtable}[H]{|l|l|} %{|@{}l|l@{}|}
+\caption{Key Performance Parameter Specifications} \\
+
+\hline \hline
+\multicolumn{1}{|l|}{\textbf{Specification}} & 
+\multicolumn{1}{|l|}{\begin{minipage}{\KppRightColumnWidth}{\textbf{Key Performance Parameter}}\end{minipage}} \\
+\hline \hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline \hline 
+\multicolumn{1}{|l|}{\textbf{Specification}}  
+& 
+\multicolumn{1}{|l|}{\begin{minipage}{\KppRightColumnWidth}{\textbf{Key Performance Parameter}}\end{minipage}} \\
+\hline \hline 
+\endhead
+
+\hline \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+%%% This is how the traces need to be formatted
+%%%\begin{minipage}{\LeftColumnWidth}{\setlength{\parskip}{0pt}Reference~\cite{ref:VIDINT_PH2_RQMTS} Section Behind the Scenes / Technical Enhancements, Item 3}\end{minipage}  & \ref{rqt:Other Data Interface} \\ \hline%
+
+\input{SPS_Chapter_03.tex_KPP.tex}
+
+\end{longtable}
+\end{center}
+}% close brace to enclose singlespace parameters
+
+%\KNEADSECTIONNEWPAGE
+\newpage
+\section{Key System Attributes}
+\label{lab:sec_Bspec_KSA}
+
+{% opening brace to group \baselineskip to tighten up rows in the table
+\singlespace
+\renewcommand{\baselinestretch}{1.0}%
+\renewcommand*{\arraystretch}{1.0}%
+
+\newlength{\KsaVspace}
+\setlength{\KsaVspace}{4 pt}
+
+\newlength{\KsaRightColumnWidth}
+\setlength{\KsaRightColumnWidth}{4.5in}% adjust as necessary based on source definitions
+	
+\begin{center}
+
+\begin{longtable}[H]{|l|l|} %{|@{}l|l@{}|}
+\caption{Key System Attribute Specifications} \\
+
+\hline \hline
+\multicolumn{1}{|l|}{\textbf{Specification}} & 
+\multicolumn{1}{|l|}{\begin{minipage}{\KsaRightColumnWidth}{\textbf{Key System Attribute}}\end{minipage}} \\
+\hline \hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline \hline 
+\multicolumn{1}{|l|}{\textbf{Specification}}  
+& 
+\multicolumn{1}{|l|}{\begin{minipage}{\KsaRightColumnWidth}{\textbf{Key System Attribute}}\end{minipage}} \\
+\hline \hline 
+\endhead
+
+\hline \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+%%% This is how the traces need to be formatted
+%%%\begin{minipage}{\LeftColumnWidth}{\setlength{\parskip}{0pt}Reference~\cite{ref:VIDINT_PH2_RQMTS} Section Behind the Scenes / Technical Enhancements, Item 3}\end{minipage}  & \ref{rqt:Other Data Interface} \\ \hline%
+
+\input{SPS_Chapter_03.tex_KSA.tex}
+
+\end{longtable}
+\end{center}
+}% close brace to enclose singlespace parameters
+

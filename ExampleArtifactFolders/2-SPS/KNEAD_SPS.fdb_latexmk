@@ -1,0 +1,19 @@
+# Fdb version 4
+["pdflatex"] 1709598286 "/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/2-SPS/KNEAD_SPS.tex" "KNEAD_SPS.pdf" "KNEAD_SPS" 1709598287 2
+  "../../KNEAD_GlobalDefs.tex" 1709598281 70224 b803235e4ba9e0f1aac4c91ddaa07b85 ""
+  "/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/2-SPS/KNEAD_SPS.tex" 1709396496 2833 617267bc69a78b2cace22f5732dde987 ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/map/fontname/texfonts.map" 1678549815 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1678549815 1288 655e228510b4c2a1abe905c368440826 ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/report.cls" 1678549815 23203 3d69f4661dd74a5edb1507ff18e40fb9 ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/size12.clo" 1678549815 8449 c314623021fbddd0180c05345324933c ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/web2c/texmf.cnf" 1678549815 40748 4081c8bc921e56c865f975bd762e388c ""
+  "/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1678549815 7884066 53a9aad02a5b14fbfbcc78ec177fdd6d ""
+  "KNEAD_SPS.aux" 0 -1 0 "pdflatex"
+  "KNEAD_SPS.tex" 1709396496 2833 617267bc69a78b2cace22f5732dde987 ""
+  "KNEAD_ThisAgencySpecifics.tex" 0 -1 0 ""
+  "KNEADdocument.cls" 1709396380 57707 fd1692a2b61cc6ddde4b6f19dab7470e ""
+  (generated)
+  "KNEAD_SPS.aux"
+  "KNEAD_SPS.log"
+  "KNEAD_SPS.pdf"
+  (rewritten before read)

@@ -1,0 +1,76 @@
+% Create the title page.
+{%
+
+	% include a logo image on the title page if one is defined
+	\ifthenelse{\equal{\KNEADtitlepageLogoFileEPS}{}}{}
+	{
+		\vfill
+		
+		\begin{figure}[htbp]
+			\centering
+				\includegraphics[width=\KNEADtitlepageLogoWidth]{\KNEADtitlepageLogoFileEPS}
+		\end{figure}
+	}%end if \KNEADtitlepageLogoFileEPS is not empty
+
+	\vfill
+
+	%%%the title
+	\begin{center}
+		\KNEADtitlepageTitle
+	\end{center}
+	
+	\vfill
+
+	% include Preparation Company Info if defined
+	\ifthenelse{\equal{\KNEADtitlepageCompanyInfo}{}}{}
+	{
+		% include Preparation Company Header if defined
+		\ifthenelse{\equal{\KNEADtitlepageCompanyHeader}{}}{}
+		{
+			\begin{center}
+				\singlespace
+				\KNEADtitlepageCompanyHeader
+			\end{center}
+		}%end if \KNEADtitlepageCompanyHeader is not empty
+				
+		\begin{center}
+			\singlespace
+			\KNEADtitlepageCompanyInfo
+		\end{center}
+			
+		\vfill
+
+	} %end if \KNEADtitlepageCompanyInfo is not empty
+	
+	%include CUI dissemination block if CUI is defined
+	\ifthenelse{\equal{\KNEADcuiStatus}{}}
+	{
+		% include distribution statement if defined
+		\ifthenelse{\equal{\KNEADtitlepageDistributionStatement}{}}{}
+		{
+			\linespread{0.75}\selectfont  
+			{
+				\begin{center}
+					\bfseries \KNEADtitlepageDistributionStatement
+				\end{center}
+			}
+		}
+	}%endif not CUI
+	{% it is CUI so print title block info
+		\linespread{0.75}\selectfont  
+		{
+			\begin{flushleft}
+				\bfseries Controlled by:~\KNEADcuiCOMPONENT\break
+				\bfseries Controlled by:~\KNEADcuiOFFICE\break
+				\bfseries CUI Category(ies):~\KNEADcuiCATEGORIES\break
+				\bfseries Limited Dissemination Control:~\KNEADcuiDISTRIBUTION\break
+				\bfseries POC:~\KNEADcuiPOC\break
+			\end{flushleft}
+			\begin{center}
+				\bfseries \KNEADcuiTitlepageDistributionStatement
+			\end{center}
+		}
+	}
+
+
+}%end of title page

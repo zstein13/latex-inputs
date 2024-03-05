@@ -1,0 +1,406 @@
+%%%%% Manually numbered requirement
+%%%%% table for requirements
+
+\newboolean{boKNEADshowSpecNotes}
+\setboolean{boKNEADshowSpecNotes}{true}
+
+\newcommand{\CBVERSION}{UNDEFINED}
+
+\newcommand{\ChangedText}[2]{\ifthenelse{\equal{\CBVERSION}{#1}}{\cbstart #2 \cbend}{#2}}
+
+\newcounter{NRQMT}
+\newlistof[NRQMT]{rqtspecification}{aux_spec}{\listspecificationsname}
+
+\newcommand{\numberedrqtspecification}[2]{%
+\refstepcounter{rqtspecification}
+\par\noindent\textbf{Specification {#1} {#2}}
+\addcontentsline{aux_spec}{rqtspecification}{\protect\numberline{#1}#2}\par}
+
+\newcommand{\OneRqmtThreshold}{({\tt T}) - Threshold}
+\newcommand{\OneRqmtObjective}{({\tt O}) - Objective}
+\newcommand{\OneRqmtInactive} {({\tt I}) - Inactive}
+\newcommand{\OneRqmtDeleted}  {({\tt D}) - Deleted}
+
+
+\newlength{\RqmtMiniPageWidth}
+\if@dobindprt % set margins to 1.5" on left (leave room for binding) and 1.0" right
+\setlength{\RqmtMiniPageWidth}{4.7in}
+\else%!dobindprt so set margins to 1.0" on left and right sides
+\setlength{\RqmtMiniPageWidth}{5.2in}
+\fi%dobindprt
+
+
+%%%%
+%%%%
+%%%% Simple table for listing single requirements with all applicable stuff
+%%%%
+%%%% #1 is requirement number
+%%%% #2 is requirement name
+%%%% #3 is requirement label (expected to be of form rqt:XXX)
+%%%% #4 is text of the single requirement
+
+%%%% #5 is version that defines this item
+%%%% #6 is status (must be a list of \items of form [phase] active, inactive, etc.},#7 is version that defines this item
+%%%% #8 is acceptance, #9 is version that defines this item
+%%%% #10 is traceability, #11 is version that defines this item
+%%%% #12 is notes {must be a list of \items}, #13 is version that defines this item
+%%%%
+%%%%
+
+\newcommand{\ONERQMTV}[9]{
+\renewcommand{\therqtspecification}{#1}
+\begin{table}[H]%\usepackage{booktabs} for \toprule, \midrule, \bottomrule
+\ifthenelse{\equal{\CBVERSION}{#9}}{\cbstart}{}
+\begin{tabular}{@{}r|l@{}}
+\toprule
+\toprule            
+%SPECIFICATION name for list of specifications    
+    \multicolumn{2}{@{}c@{}}{%this c only centers the minipage
+	   \begin{minipage}{\textwidth}% to allow for it to wrap
+	    \centering% to make contents of minipage to be centered
+	     \numberedrqtspecification{#1}{#2}
+	      \label{#3}
+	   \end{minipage}} \\
+\midrule            
+% TEXT is the formal requirement specification text
+			{\bf Text}  & 
+			\begin{minipage}{\RqmtMiniPageWidth}
+			   {#4} % e.g. The system interface 1 connector 1 as style 38999-XYZ labeled as J1.  
+			\end{minipage} \\
+\midrule
+% STATUS, these are the requirement status by phases
+			{\bf Status} &
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple specifics in one cell
+			 \begin{description}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+			    {#5} % MUST BE a list of decription items -- of form \item [Phase] status				 
+			 \end{description}  
+			\end{minipage} \\			
+\midrule
+% ACCEPTANCE method (inspection, demonstration, test, analysis, or other		 
+			{\bf Acceptance}   & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of verification			
+			   {#6} %e.g. This specification shall be verified by inspection. 
+			        % could include other test info here but the formatting is left to user to provide
+			\end{minipage} \\
+\midrule 
+% TRACEABILITY provides a reference to a higher level specification document, if applicable		
+			{\bf Traceability} & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of traceability
+			 \begin{description}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+			    {#7} % MUST BE a list of decription items -- of form \item [Document] requirement number				 
+			 \end{description}						
+			%\end{minipage}\\				
+%\midrule 
+%print out the notes if we're supposed to
+% NOTES	are NOT part of the specification, just a place for comments about the specification
+\ifthenelse{\boolean{boKNEADshowSpecNotes}}{%	
+\end{minipage}\\% end Traceability minipage in the ifthenelse to keep \midrule after the break			
+\midrule% seems to need to be right after the break, thus the placement of end{minipage}\\ in the ifthenelse					
+			{\bf Notes}        & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of notes
+			 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+			    {#8} % MUST BE a list of enumerated items -- of form \item Note 1...
+				       % even if there is just one, e.g. \item No notes for this specification.		 
+			 \end{enumerate}			    
+			\end{minipage}\\	
+\bottomrule% end table with double bottomrule right after the final end{minipage} and break
+\bottomrule
+}%end ifthen clause
+{%else just end the table by ending traceability minipage, break, and double bottomrules
+\end{minipage}\\				
+\bottomrule 
+\bottomrule}%end ifthenelse		
+\end{tabular}
+\ifthenelse{\equal{\CBVERSION}{#9}}{\index{All Changes This Version}\cbend}{}							
+\end{table}
+} %end of ONERQMTV[9]
+
+
+%https://tex.stackexchange.com/questions/2132/how-to-define-a-command-that-takes-more-than-9-arguments
+\newcommand{\MULTIRQMTV}[1]%looks like [10], #1 is saved and #2...#10 --> #1...#9 in MULTIRQMTVbase[9]
+{
+\def\SpecNumber{#1}
+\MULTIRQMTVbase
+}
+
+\newcommand{\MULTIRQMTVbase}[9]{
+\renewcommand{\therqtspecification}{\SpecNumber}
+\begin{table}[H]%\usepackage{booktabs} for \toprule, \midrule, \bottomrule
+\ifthenelse{\equal{\CBVERSION}{#9}}{\cbstart}{}
+\begin{tabular}{@{}r|l@{}}
+\toprule
+\toprule            
+%SPECIFICATION name for list of specifications    
+    \multicolumn{2}{@{}c@{}}{%this c only centers the minipage
+	   \begin{minipage}{\textwidth}% to allow for it to wrap
+	    \centering% to make contents of minipage to be centered
+	     \numberedrqtspecification{\SpecNumber}{#1}
+	      \label{#2}
+	   \end{minipage}} \\
+\midrule            
+% SYNOPSIS is just a quick summary, not the formal rqt specification
+			{\bf Text}  & 
+			\begin{minipage}{\RqmtMiniPageWidth}
+				{#3} %The system interface 1 connector 1 as style 38999-XYZ labeled as J1.  
+			\end{minipage} \\
+\midrule
+% SPECIFICS, these are the formal specification details
+			{\bf Specifics} &
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple specifics in one cell
+			 \begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+				{#4} 
+%%%%%			 		\item The connector for interface 1 shall be labled as J1. 
+%%%%%				    \item The connector for interface 1 shall be MFG P/N 38999-XYZ.  
+%%%%%					\item The connector for interface 1 shall have finish type \TBD.
+%%%%%					\item The connector for interface 1 shall have finish color \TBD.
+%%%%%					\item The connector for interface 1 shall be keyed as \TBD.							 
+			 \end{enumerate}  
+			\end{minipage} \\
+\midrule
+%STATUS  			 
+			{\bf Status}   & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of verification	
+				\begin{description}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+			   {#5} % MUST BE a list of decription items -- of form \item [Phase] status
+				\end{description}
+			\end{minipage} \\
+\midrule
+% ACCEPTANCE method (inspection, demonstration, test, analysis, or other
+			{\bf Acceptance}       & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of status			
+			   {#6} %Active 
+			\end{minipage} \\	
+\midrule
+% TRACEABILITY provides a reference to a higher level specification document, if applicable		
+			{\bf Traceability} & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of traceability	
+					\begin{description}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+			   {#7} %This specification is derived from \ldots.
+					\end{description}
+			%\end{minipage}\\
+%\midrule
+%print out the notes if we're supposed to
+% NOTES	are NOT part of the specification, just a place for comments about the specification
+\ifthenelse{\boolean{boKNEADshowSpecNotes}}{%
+\end{minipage}\\% end Traceability minipage in the ifthenelse to keep \midrule after the break			
+\midrule% seems to need to be right after the break, thus the placement of end{minipage}\\ in the ifthenelse						
+			{\bf Notes}        & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of notes		
+				\begin{enumerate}[topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex]
+				{#8} % MUST BE a list of enumerated items -- of form \item Note 1...
+				     % even if there is just one, e.g. \item No notes for this specification.		 
+				\end{enumerate}
+			\end{minipage} \\	
+\bottomrule% end table with double bottomrule right after the final end{minipage} and break
+\bottomrule
+}%end ifthen clause
+{%else just end the table by ending traceability minipage, break, and double bottomrules
+\end{minipage}\\				
+\bottomrule 
+\bottomrule}%end ifthenelse			
+\end{tabular}
+\ifthenelse{\equal{\CBVERSION}{#9}}{\index{All Changes This Version}\cbend}{}							
+\end{table}
+}%end of MULTIRQMTVbase[9]
+
+
+
+
+%aliases to find KPP and KSA requirements for the B-spec
+\newcommand{\ONERQMTVKPP}{\ONERQMTV}
+\newcommand{\ONERQMTVKSA}{\ONERQMTV}
+\newcommand{\MULTIRQMTVKPP}{\MULTIRQMTV}
+\newcommand{\MULTIRQMTVKSA}{\MULTIRQMTV}
+% old, deprecated ones
+\newcommand{\ONERQMTKPP}{\ONERQMT}
+\newcommand{\ONERQMTKSA}{\ONERQMT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Deprecated stuff below here, shouldn't be used, migrate to ones above
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%\newcounter{NRQMT}
+%%\newlistof[NRQMT]{rqtspecification}{aux_spec}{\listspecificationsname}
+%%%%
+%%%%
+%%%% Simple table for listing single requirements with all applicable stuff
+%%%%
+%%%% #1 is requirement number
+%%%% #2 is requirement name
+%%%% #3 is requirement label (expected to be of form rqt:XXX)
+%%%% #4 is text of the single requirement
+%%%% #5 is status (must be a list of \items of form [phase] active, inactive, etc.}
+%%%% #6 is acceptance
+%%%% #7 is traceability
+%%%% #8 is notes {must be a list of \items}
+%%%%
+%%%%
+\newcommand{\ONERQMT}[8]{
+\renewcommand{\therqtspecification}{#1}
+\begin{table}[H]%\usepackage{booktabs} for \toprule, \midrule, \bottomrule
+\begin{tabular}{@{}r|l@{}}
+\toprule
+\toprule            
+%SPECIFICATION name for list of specifications    
+    \multicolumn{2}{@{}c@{}}{%this c only centers the minipage
+	   \begin{minipage}{\textwidth}% to allow for it to wrap
+	    \centering% to make contents of minipage to be centered
+	     \numberedrqtspecification{#1}{#2}
+	      \label{#3}
+	   \end{minipage}} \\
+\midrule            
+% TEXT is the formal requirement specification text
+			{\bf Text}  & 
+			\begin{minipage}{\RqmtMiniPageWidth}
+			   {#4} % e.g. The system interface 1 connector 1 as style 38999-XYZ labeled as J1.  
+			\end{minipage} \\
+\midrule
+% STATUS, these are the requirement status by phases
+			{\bf Status} &
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple specifics in one cell
+			 \begin{my_description}
+			    {#5} % MUST BE a list of decription items -- of form \item [Phase] status				 
+			 \end{my_description}  
+			\end{minipage} \\			
+\midrule
+% ACCEPTANCE method (inspection, demonstration, test, analysis, or other		 
+			{\bf Acceptance}   & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of verification			
+			   {#6} %e.g. This specification shall be verified by inspection. 
+			        % could include other test info here but the formatting is left to user to provide
+			\end{minipage} \\
+\midrule 
+% TRACEABILITY provides a reference to a higher level specification document, if applicable		
+			{\bf Traceability} & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of traceability
+			 \begin{my_description}
+			    {#7} % MUST BE a list of decription items -- of form \item [Document] requirement number				 
+			 \end{my_description}						
+			\end{minipage}\\				
+\if@showreqnotes
+\midrule 
+% NOTES	are NOT part of the specification, just a place for comments about the specification
+			{\bf Notes}        & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of notes
+			 \begin{my_enumerate}
+			    {#8} % MUST BE a list of items
+				     % even if there is just one -- of form \item blah blah			 
+			 \end{my_enumerate}			    
+			\end{minipage} \\	
+\fi%showreqnotes
+\bottomrule 								
+\bottomrule 								
+\end{tabular}
+\end{table}
+} %end of ONERQMT[8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newcommand{\NRQMTT}[9]{
+\renewcommand{\therqtspecification}{#1}
+\begin{table}[H]%\usepackage{booktabs} for \toprule, \midrule, \bottomrule
+
+
+% longtable stuff, still trying to get it to work 20141212WLC
+%\begin{longtable}[H]%\usepackage{booktabs} for \toprule, \midrule, \bottomrule
+%\hline \hline
+%\endhead
+%\hline \hline
+%\endfirsthead
+%\hline \multicolumn{1}{|r|}{{Continued on next page}} \\ \hline
+%\endfoot
+%\hline \hline
+%\endlastfoot
+
+\begin{tabular}{@{}r|l@{}}
+\toprule
+\toprule            
+%SPECIFICATION name for list of specifications    
+    \multicolumn{2}{@{}c@{}}{%this c only centers the minipage
+	   \begin{minipage}{\textwidth}% to allow for it to wrap
+	    \centering% to make contents of minipage to be centered
+	     \numberedrqtspecification{#1}{#2}
+	      \label{#3}
+	   \end{minipage}} \\
+\midrule            
+% SYNOPSIS is just a quick summary, not the formal rqt specification
+			{\bf Text}  & 
+			\begin{minipage}{\RqmtMiniPageWidth}
+				{#4} %The system interface 1 connector 1 as style 38999-XYZ labeled as J1.  
+			\end{minipage} \\
+\midrule
+% SPECIFICS, these are the formal specification details
+			{\bf Specifics} &
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple specifics in one cell
+			 \begin{my_enumerate}
+				{#5} 
+%%%%%			 		\item The connector for interface 1 shall be labled as J1. 
+%%%%%				    \item The connector for interface 1 shall be MFG P/N 38999-XYZ.  
+%%%%%					\item The connector for interface 1 shall have finish type \TBD.
+%%%%%					\item The connector for interface 1 shall have finish color \TBD.
+%%%%%					\item The connector for interface 1 shall be keyed as \TBD.							 
+			 \end{my_enumerate}  
+			\end{minipage} \\			
+\midrule
+% ACCEPTANCE method (inspection, demonstration, test, analysis, or other
+			{\bf Acceptance}       & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of status			
+			   {#6} %Active 
+			\end{minipage} \\	
+\midrule
+%%% with the switch to marking each line of the specification, we no longer need to show the overall status
+%%% but we leave this option for older documents, just need to add this to options until \RQMTxxx calls are fixed
+%STATUS  			 
+			{\bf Status}   & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of verification	
+				\begin{my_description}
+			   {#7} % MUST BE a list of decription items -- of form \item [Phase] status
+				\end{my_description}
+			\end{minipage} \\
+\midrule 
+% TRACEABILITY provides a reference to a higher level specification document, if applicable		
+			{\bf Traceability} & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of traceability	
+					\begin{my_description}
+			   {#8} %This specification is derived from \ldots.
+					\end{my_description}
+			\end{minipage}\\				
+\if@showreqnotes
+\midrule 
+% NOTES	are NOT part of the specification, just a place for comments about the specification
+	
+			{\bf Notes}        & 
+			\begin{minipage}{\RqmtMiniPageWidth} %%% minipage to allow for multiple lines of notes		
+				\begin{my_enumerate}
+				{#9} %There are no notes for this specification.
+				\end{my_enumerate}
+			\end{minipage} \\	
+\fi%showreqnotes
+\bottomrule 								
+\bottomrule 								
+\end{tabular}
+\end{table}
+%\end{longtable}
+}%end of NRQMT[9]
+
+

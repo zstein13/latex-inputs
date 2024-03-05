@@ -1,0 +1,32 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN :: Title page base definitions
+% (to be mostly overridden by user in the main file, or, by convention, in a file named zPROJECTtitlepageInfo.tex
+% which is so named to list at the bottom of the directory listing below the important artifact files.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\KNEADagencyName}{The KNEAD Project}
+
+
+%%% 
+%%% CUI STATUS, uncomment if not CUI
+% \renewcommand{\KNEADcuiStatus}{CUI}
+%%% CUI Dissemination Block info, DO NOT INCLUDE Lables, just the info
+\renewcommand{\KNEADcuiCOMPONENT}{NAWCAD}
+\renewcommand{\KNEADcuiOFFICE}{DATA GROUP}
+\renewcommand{\KNEADcuiCATEGORIES}{CUI//CTI}
+\renewcommand{\KNEADcuiDISTRIBUTION}{FEDCON}
+\renewcommand{\KNEADcuiPOC}{Undefined Gpl, undefined.l.gpl.civ@us.navy.mil}
+
+
+% here is example of putting a logo in the left header
+\renewcommand{\KNEADleftHeader}{\setlength{\unitlength}{.01in}
+\begin{picture}(0,0)
+%\put(0,0){\includegraphics[height=.5in]{../zProjectWideData/images/KNEADlogo_100dpi_1000milsHigh.eps}}
+\put(0,0){\includegraphics[height=.5in]{images/KNEADlogo_100dpi_1000milsHigh.eps}}
+\end{picture}}
+
+%
+% define project wide title page stuff here
+%
+%\renewcommand{\KNEADtitlepageLogoFileEPS}{../zProjectWideData/images/KNEADlogo_100dpi_6000milsWide.eps}
+\renewcommand{\KNEADtitlepageLogoFileEPS}{images/KNEADlogo_100dpi_6000milsWide.eps}
+\renewcommand{\KNEADtitlepageLogoWidth}{6.0in}

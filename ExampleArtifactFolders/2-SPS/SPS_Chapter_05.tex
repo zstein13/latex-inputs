@@ -1,0 +1,55 @@
+%%% SVN stuff
+\svnidlong
+{$HeadURL: https://svn.riouxsvn.com/kneadlatxinputs/ExampleArtifactFolders/2%20-%20SPS/SPS_Chapter_05.tex $}
+{$LastChangedDate: 2024-02-21 22:21:17 -0500 (Wed, 21 Feb 2024) $}
+{$LastChangedRevision: 58 $}
+{$LastChangedBy: KneadProject $}
+\svnid{$Id: SPS_Chapter_05.tex 58 2024-02-22 03:21:17Z KneadProject $}
+
+\chapter{Traceability}
+
+This section provides a list of the sources, if applicable, for each requirement.
+This traceability connects the specifications in this document to those presented in higher level sources such as a Joint Urgent Operational Need (\JUON) document, Joint Emergent Operational Need (\JEON), or a STATEMENT OF WORK (\SOW)
+
+The traceability of all specifications from each requirement to its source, if applicable, is listed in the specifications presented in section 3. Traceability from each document to requirements is provided below.
+
+
+\begingroup % opening to group \baselineskip to tighten up rows in the table
+\newlength{\LeftColumnWidth}
+\setlength{\LeftColumnWidth}{4.5in}% adjust as necessary based on source definitions
+	
+\begin{center}
+\renewcommand{\baselinestretch}{1.25}%tighten up rows in longtable
+\renewcommand{\arraystretch}{1.0}%tighten up rows in longtable
+\begin{longtable}[H]{|l|l|} %{|@{}l|l@{}|}
+\caption{Source to Requirement Traceability.} \\
+
+\hline \hline
+\multicolumn{1}{|l|}{\begin{minipage}{\LeftColumnWidth}{\renewcommand{\baselinestretch}{1.0} \textbf{Source Requirement}}\end{minipage}} & 
+\multicolumn{1}{|l|}{\setlength{\baselineskip}{0pt} \textbf{Traced Requirement}} \\
+\hline \hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline \hline 
+\multicolumn{1}{|l|}{\begin{minipage}{\LeftColumnWidth}{\textbf{Source Requirement}}\end{minipage}} & 
+\multicolumn{1}{|l|}{\textbf{Traced Requirement}} \\
+\hline \hline 
+\endhead
+
+\hline \hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+%%% This is how the traces need to be formatted
+%%%\begin{minipage}{\LeftColumnWidth}{\setlength{\parskip}{0pt}Reference~\cite{ref:VIDINT_PH2_RQMTS} Section Behind the Scenes / Technical Enhancements, Item 3}\end{minipage}  & \ref{rqt:Other Data Interface} \\ \hline%
+
+\input{SPS_Chapter_03.tex_Traces.tex}
+
+\end{longtable}
+\end{center}
+\endgroup% close group to enclose longtable spacing parameters
+
