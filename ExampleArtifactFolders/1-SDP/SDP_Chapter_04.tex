@@ -9,46 +9,109 @@
 
 \chapter{System Development Plans}
 \label{loc:PlansForSystemDevelopment}
-\input{DIDINFO_Snippets/SDP/SDP_4.0.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.0.0_DIDINFO.tex}
 
-This chapter is \TBD.
+This chapter will provide a brief overview of the required hardware and firmware for \ThisSystem. 
 
 \section{Hardware Development Plans}
 \label{loc:SDP_HardwareDevelopmentPlans}
-\input{DIDINFO_Snippets/SDP/SDP_4.1.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.1.0_DIDINFO.tex}
 
-This section is \TBD.
+There will be no hardware development for this project. All development will take place on a Raspberry Pi Pico W development kit.
 
 \section{Firmware Development Plans}
 \label{loc:SDP_FirmwareDevelopmentPlans}
-\input{DIDINFO_Snippets/SDP/SDP_4.2.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.2.0_DIDINFO.tex}
 
-This section is \TBD.
+The firmware development plan will follow the development assignment outline for the course ENPM818I.
+The development assignments are as follows:
 
+\begin{itemize}
+    \item Dev Assignment 1
+    \begin{itemize}
+        \item Development kit and tools are operational
+    \end{itemize}
+    \item Dev Assignment 2
+    \begin{itemize}
+        \item Debugger and Emulator tools for the devlopment kit are operational
+    \end{itemize}
+    \item Dev Assignment 3
+    \begin{itemize}
+        \item Demonstrate necessary IO Stream and Interrupt Handler for the project.
+    \end{itemize}
+    \item Dev Assignment 4
+    \begin{itemize}
+        \item Demonstrate security measures necessary for the project.
+    \end{itemize}
+    \item Dev Assignment 5
+    \begin{itemize}
+        \item Implement networking capabilities for the project.
+    \end{itemize}
+\end{itemize}
 
 \section{Software Development Plans}
 \label{loc:SDP_SoftwareDevelopmentPlans}
-\input{DIDINFO_Snippets/SDP/SDP_4.3.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.3.0_DIDINFO.tex}
 
-This section is \TBD.
+\subsection{Raspberry Pi Pico C/C++ SDK Overview + Installation}
+
+The main documentation for the Raspberry Pi Pico C/C++ SDK can be found in \citePicoSDK. 
+The document provides information about the SDK architecture, Programmable I/O, and Library documentation. 
+
+Installation instructions can be found in \citePicoGetStart. Chapter 1 of the Getting Started guide provides instructions for how to setup the Raspberry Pi Pico using the \href{https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh}{pico\textunderscore setup} script.
+Chapter 2 of the Getting Started guide provides instructions for how to build, install, and work with the C/C++ SDK. 
+
+\subsubsection{Setting Up the Raspberry Pi Pico}
+To setup a Raspberry Pi Pico, follow chapter 1 of \citePicoGetStart. Use the \href{https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh}{pico\textunderscore setup.sh} installation script. 
+This installation script will:
+\begin{itemize}
+    \item Create a directory called pico
+    \item Install required dependencies
+    \item Download the pico-sdk, pico-examples, pico-extras, and pico-playground repositories
+    \item Define ENV variable paths in the .bashrc file.
+    \item Build the blink and hello\textunderscore world examples in pico-examples/build/blink and pico-examples/build/hello\textunderscore world
+    \item Download and build picotool, and copy it to /usr/local/bin.
+    \item Download and build picoprobe.
+    \item Download and install Visual Studio Code
+    \item Download and compile OpenOCD
+    \item Install the required Visual Studio Code extensions
+    \item Configure the Raspberry Pi UART for use with Raspberry Pi Pico
+\end{itemize}
+
+\subsubsection{Installing the Raspberry Pi Pico C/C++ SDK}
+To install the Raspberry Pi Pico C/C++ SDK, follow chapter 2 of \citePicoGetStart. Section 2.1 instructs to install the SDK from the \href{https://github.com/raspberrypi/pico-sdk}{pico-sdk github repository}.
+It also links to the \href{https://github.com/raspberrypi/pico-examples}{pico-examples github repository} that provides a set of example applications that are written using the C/C++ SDK.
+Additionally, in sections 2.2 and 2.3, there are installation instructions for required tools to build and run applications in \href{https://github.com/raspberrypi/pico-examples}{pico-examples} and information for how to update the SDK. The tools include:
+
+\begin{itemize}
+    \item gcc-arm-none-eabi
+    \item libnewlib-arm-none-eabi
+    \item build-essential
+\end{itemize}
+
+
+
+The software development plan for this project is still \TBD. This section will be updated in the future.
 
 
 \section{Integration Plans}
 \label{loc:SDP_IntegrationPlans}
-\input{DIDINFO_Snippets/SDP/SDP_4.4.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.4.0_DIDINFO.tex}
 
-This section is \TBD.
+The integration plans for this project are still \TBD. This section will be updated in the future.
 
 
 \section{Testing Plans}
 \label{loc:SDP_TestingPlans}
-\input{DIDINFO_Snippets/SDP/SDP_4.5.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.5.0_DIDINFO.tex}
 
-This section is \TBD.
+All firmware and software for \ThisSystem will be accompanied with unit tests. 
+An open source tool will be selected to audit the code base and there will be a set threshold for code coverage. 
+Otherwise, the formal testing plan for \ThisSystem is still \TBD and will be updated in the future.
 
 
 \section{Other Development Activities}
 \label{loc:SDP_OtherDevelopmentActivities}
-\input{DIDINFO_Snippets/SDP/SDP_4.6.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SDP/SDP_4.6.0_DIDINFO.tex}
 
-This section is \TBD.
+Other development activities will be added to this document in the future. As of now, this section is \TBD.
