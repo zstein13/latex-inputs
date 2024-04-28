@@ -1,8 +1,0 @@
-PWD /Users/zsteinberg/UMD/ENPM818I/LatexInputs
-INPUT /opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/web2c/texmf.cnf
-INPUT /opt/homebrew/Cellar/texlive/20230313_3/share/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/zsteinberg/UMD/ENPM818I/LatexInputs/Section_1.3_SpecificationTraceability.tex
-OUTPUT Section_1.3_SpecificationTraceability.log
-INPUT /opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT /opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
