@@ -1,27 +1,28 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2024.2.23)  4 MAR 2024 19:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.27)  28 APR 2024 23:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/2-SPS/KNEAD_SPS.tex
 (/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/2-SPS/KNEAD_SPS.tex
-LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-22> (./KNEADdocument.cls
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(./KNEADdocument.cls
 Document Class: KNEADdocument 2021/12/05:: version 1.00:: KNEAD Document format
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
-(/opt/homebrew/Cellar/texlive/20230313_3/share/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@chapter=\count186
-\c@section=\count187
-\c@subsection=\count188
-\c@subsubsection=\count189
-\c@paragraph=\count190
-\c@subparagraph=\count191
-\c@figure=\count192
-\c@table=\count193
+\c@part=\count188
+\c@chapter=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
@@ -33,9 +34,9 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \@alttextheight=\skip54
 \@fullheadheight=\skip55
 \@headtofootheight=\skip56
-\c@chaptercitecount=\count194
-\c@totaltablecount=\count195
-\c@totalfigurecount=\count196
+\c@chaptercitecount=\count197
+\c@totaltablecount=\count198
+\c@totalfigurecount=\count199
 ) (../../KNEAD_GlobalDefs.tex
 
 ! LaTeX Error: File `KNEAD_ThisAgencySpecifics.tex' not found.
@@ -53,11 +54,11 @@ l.1110 \input{KNEAD_ThisAgencySpecifics.tex}
 
  
 Here is how much of TeX's memory you used:
- 1270 strings out of 476025
- 12206 string characters out of 5779036
- 1849388 words of memory out of 5000000
- 21805 multiletter control sequences out of 15000+600000
- 512585 words of font info for 33 fonts, out of 8000000 for 9000
+ 1265 strings out of 474116
+ 11887 string characters out of 5743682
+ 1925187 words of memory out of 5000000
+ 23708 multiletter control sequences out of 15000+600000
+ 558367 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,0n,52p,730b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 49i,0n,52p,730b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
 ../../KNEAD_GlobalDefs.tex:1110:  ==> Fatal error occurred, no output PDF file produced!
