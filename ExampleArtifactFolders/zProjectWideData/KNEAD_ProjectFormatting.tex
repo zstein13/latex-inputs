@@ -5,7 +5,12 @@
 % left header to show how this works in the ProjectsDef file
 %Adjust phantom spaces to align top and bottom lines of the header
 %
-\renewcommand{\KNEADleftHeader}{\phantom{\hspace{0.0pt}}Garden\phantom{\hspace{0.0pt}}\\\phantom{\hspace{15.0pt}}Control System\phantom{\hspace{0.0pt}}}
+% \renewcommand{\KNEADleftHeader}{\phantom{\hspace{0.0pt}}Garden\phantom{\hspace{0.0pt}}\\\phantom{\hspace{15.0pt}}Control System\phantom{\hspace{0.0pt}}}
+\renewcommand{\KNEADleftHeader}{\setlength{\unitlength}{.01in}
+\begin{picture}(0,0)
+%\put(0,0){\includegraphics[height=.5in]{../zProjectWideData/images/KNEADlogo_100dpi_1000milsHigh.eps}}
+\put(0,0){\includegraphics[height=.5in]{images/logo.png}}
+\end{picture}}
 %
 % center header, with CUI check
 %
