@@ -9,56 +9,116 @@
 
 \chapter{Version Description}
 \label{loc:VersionDescription}
-\input{DIDINFO_Snippets/SVD/SVD_3.0.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.0.0_DIDINFO.tex}
 
-This chapter is \TBD.
+This chapter will provide an inventory of all used software and hardware, provide change information for the \ThisSystem, and provide installation instructions for required software.
 
 \section{Inventory of Materials}
 \label{loc:InventoryOfMaterials}
-\input{DIDINFO_Snippets/SVD/SVD_3.1.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.1.0_DIDINFO.tex}
 
-This section is \TBD.
+The materials used for the \ThisSystem are:
 
-{\em Need to list hardware first so we can point to it in next section.}
+\begin{itemize}
+    \item Raspberry Pi Pico W
+    \begin{itemize}
+        \item \href{https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf}{Raspberry Pi Pico W Datasheet}
+    \end{itemize}
+\end{itemize}
 
+The Raspberry Pi Pico W is a RP2040-based microcontroller board with wireless capabilities.
 
 \section{Inventory of Software}
 \label{loc:InventoryOfSoftware}
-\input{DIDINFO_Snippets/SVD/SVD_3.2.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.2.0_DIDINFO.tex}
 
-This section is \TBD.
+The software used for the \ThisSystem are:
 
+\begin{itemize}
+    \item pico-sdk: Release SDK 1.5.1 June 13, 2023
+    \begin{itemize}
+        \item \href{https://github.com/raspberrypi/pico-sdk}{pico-sdk Github repository}
+    \end{itemize}
+    \item pico-examples: Release Tag sdk-1.5.1 June 11, 2023
+    \begin{itemize}
+        \item \href{https://github.com/raspberrypi/pico-examples}{pico-examples Github repository}
+    \end{itemize}
+\end{itemize}
 
-\section{Changes From Prior Version}
-\label{loc:ChangesFromPriorVersion}
-\input{DIDINFO_Snippets/SVD/SVD_3.3.0_DIDINFO.tex}
+Both the pico-sdk and pico-examples repositories are provided by the Raspberry Pi Ltd organization. 
+The pico-sdk and pico-examples repositories work on any Raspberry Pi Pico board.
 
-This section is \TBD. (And is not applicable to the first release.)
+The pico-sdk SDK is a C/C++ SDK designed for the Raspberry Pi Pico family of microcontroller boards. The documentation for pico-sdk can be found in the SDK documentation \cite{ref__RP_Pico_C_SDK}.
+The pico-examples repository contains sample code and projects that are provided by the Raspberry Pi Ltd organization. The sample projects use Release 1.5.1 of the pico-sdk. 
+
+% \section{Changes From Prior Version}
+% \label{loc:ChangesFromPriorVersion}
+% \input{DIDINFO_Snippets/SVD/SVD_3.3.0_DIDINFO.tex}
+
+% This section is \TBD. (And is not applicable to the first release.)
 
 
 \section{Adaptation Data}
 \label{loc:AdaptationData}
-\input{DIDINFO_Snippets/SVD/SVD_3.4.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.4.0_DIDINFO.tex}
 
-This section is \TBD.
+There is currently no unique-to-site data for the \ThisSystem. Updates will be made to this section when applicable.
 
 
 \section{Related (Third Party) Documents}
 \label{loc:RelatedDocuments}
-\input{DIDINFO_Snippets/SVD/SVD_3.5.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.5.0_DIDINFO.tex}
 
-This section is \TBD.
+The following is a list of third party documents associated with the software used for the \ThisSystem:
+
+\begin{itemize}
+    \item \cite{ref__RP_Getting_Started} Raspberry Pi Pico Getting Started Guide
+    \item \cite{ref__RP_Pico_C_SDK} Raspberry Pi Pico C/C++ SDK Official Documentation
+\end{itemize}
 
 
 \section{Installation Instructions}
 \label{loc:InstallationInstructions}
-\input{DIDINFO_Snippets/SVD/SVD_3.6.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.6.0_DIDINFO.tex}
 
-This section is \TBD.
+This section will provide an overview for how to install the pico-sdk and pico-examples repositories.
 
+\subsection{Installing pico-sdk}
+For detailed steps on how to install the pico-sdk, please refer to the \cite{ref__RP_Getting_Started} Raspberry Pi Pico Getting Started Guide. 
+The pico-sdk can be found in the github repo: \url{github.com/raspberrypi/pico-sdk}
+The following will list the necessary steps to install the pico-sdk:
+
+\begin{enumerate}
+    \item Install CMake (at least version 3.13), and GCC cross compiler
+    \item Clone the Raspberry Pi Pico SDK repository using git clone
+    \item Set the ENV variable PICO\textunderscore SDK\textunderscore PATH to the SDK location in your environment.
+    \item Setup a CMakeLists.txt file
+\end{enumerate}
+
+These steps will install and configure the pico-sdk repository onto your system.
+
+\subsection{Installing pico-examples}
+For detailed steps on how to install the pico-examples, please refer to the \cite{ref__RP_Getting_Started} Raspberry Pi Pico Getting Started Guide. 
+pico-examples can be found in the github repo: \url{github.com/raspberrypi/pico-examples}
+The following will list the necessary steps to install the pico-examples:
+
+\begin{enumerate}
+    \item Clone the Raspberry Pi Pico Examples repository using git clone
+\end{enumerate}
+
+\subsection{Quick Pico Setup via Install Script}
+The Raspberry Pi organization provides a setup shell script to configure your system with the pico-sdk and pico-examples script. 
+The Getting Started With Pico \cite{ref__RP_Getting_Started} guide provides more information about the setup script.
+The following are the necessary steps to run the install script:
+
+\begin{enumerate}
+    \item Get the script via terminal command: wget \url{https://raw.githubusercontent.com/raspberrypi/pico-setup/master/pico_setup.sh}
+    \item Make the script executable with: chmod +x pico\textunderscore setup.sh
+    \item Run the script with: ./pico\textunderscore setup.sh
+\end{enumerate}
 
 \section{Possible Problems and Known Errors}
 \label{loc:PossibleProblemsAndKnownErrors}
-\input{DIDINFO_Snippets/SVD/SVD_3.7.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SVD/SVD_3.7.0_DIDINFO.tex}
 
-This section is \TBD.
+There are no possible problems or known errors at this time. This section will be updated if and when applicable.
