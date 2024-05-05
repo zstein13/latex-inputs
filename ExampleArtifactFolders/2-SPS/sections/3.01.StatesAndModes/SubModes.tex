@@ -12,9 +12,9 @@ See the formal specifications, if applicable, in the following sections for form
 {\bf Name} & {\bf Summary}	& {\bf Valid Sub-States}\\
 			\hline
 			\hline
-Sub-Mode A & Sub-Mode A summary & Mode 1\\ \hline
-Sub-Mode B & Sub-Mode B summary & Mode 2\\ \hline
-Sub-Mode C & Sub-Mode C summary & Mode 3\\ 
+Temperature Monitoring & \ThisSys will monitor temperature and activate the irrigation system based on a temperature threshold & Active Monitoring\\ \hline
+Soil Moisture Level Monitoring & \ThisSys will monitor soil moisture and activate the irrigation system based on a moisture threshold & Active Monitoring\\ \hline
+
 			\hline
 			\hline
 			\end{tabular}
@@ -33,14 +33,14 @@ Sub-Mode C & Sub-Mode C summary & Mode 3\\
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{SubMode A}
+{Temperature Monitoring}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:SubModeA}
 % #4 is Text of the specification
-{The system shall provide the SubMode-A submode.}
+{The system shall monitor environmental temperature and activate the irrigation system for a set duration if the temperature is above a set temperature threshold.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -50,7 +50,9 @@ Sub-Mode C & Sub-Mode C summary & Mode 3\\
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The SubMode-A submode generalizes the case where the system is \TBD.
+	\item The Temperature Monitoring submode generalizes the case where the system is actively monitoring temperature.
+	\item When temperature crosses a set threshold, the irrigation system will activate for a set duration. 
+	\item After the set time duration has passed, the irrigation system will deactivate.
 }
 % #9 is changebar version
 {P1}
@@ -61,14 +63,14 @@ Sub-Mode C & Sub-Mode C summary & Mode 3\\
 % #1 is requirement Number
 {\RqtNumberBase.2}
 % #2 is Title
-{SubMode B}
+{Soil Moisture Level Monitoring}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:SubModeB}
 % #4 is Text of the specification
-{The system shall provide the SubMode-B submode.}
+{The system shall monitor soil moisture levels and activate the irrigation system when moisture levels drop below a certain threshold.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -78,36 +80,9 @@ Sub-Mode C & Sub-Mode C summary & Mode 3\\
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The SubMode-B submode generalizes the case where the system is \TBD.
-}
-% #9 is changebar version
-{P1}
-%%%%% end \ONERQMTV[9] macro
-
-
-%%% \ONERQMTV[9] is macro for consistently formatted requirements
-\ONERQMTV
-% #1 is requirement Number
-{\RqtNumberBase.3}
-% #2 is Title
-{SubMode C}
-% #3 is requirement label (expected to be of form rqt:XXX)
-{rqt:SubModeC}
-% #4 is Text of the specification
-{The system shall provide the SubMode-C submode.}
-% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
-{
-	\item [Phase 1] Threshold
-}
-% #6 is Acceptance
-{This requirement shall be verified by demonstration.}
-% #7 is Traceability
-{
-	\item [N/A] This requirement is a base requirement.
-}
-% #8 is Notes; listed as enumeration \item ...
-{
-	\item The SubMode-C submode generalizes the case where the system is \TBD.
+	\item The Soil Moisture Level Monitoring submode generalizes the case where the system is actively monitoring soil moisture levels.
+	\item When soil moisture levels drop below a certain threshold, the irrigation system will activate until soil moisture levels are above a certain threshold.
+	\item After soil moisture levels are above a certain threshold, the irrigation system will be deactivated.
 }
 % #9 is changebar version
 {P1}
