@@ -5,14 +5,14 @@ The operator requirements for \ThisSystem are listed below.
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Power}
+{Garden Irrigation}
 % #3 is requirement label (expected to be of form rqt:XXX)
-{rqt:Operator Inputs}
+{rqt:Operator Outputs}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of \TBD operator inputs.}
+{All \ThisSys variants shall be capable of proper garden irrigation until environmental thresholds are met or a set time duration has passed. The irrigation system size is \TBD.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -22,7 +22,7 @@ The operator requirements for \ThisSystem are listed below.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item Add as many of these as necessary. Split into files, e.g., OperatorInputs.tex and OperatorOutputs.tex, as needed. Just use the RequirementNumberAM and RqtNumberBase commands to keep numbers correct if subsubsections are added.
+  \item The irrigation system will be capable of watering a garden of a set size.
 }
 % #9 is changebar version
 {P1}
@@ -33,14 +33,14 @@ The operator requirements for \ThisSystem are listed below.
 % #1 is requirement Number
 {\RqtNumberBase.2}
 % #2 is Title
-{Power}
+{Water Pump}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:Operator Outputs}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of \TBD operator outputs.}
+{All \ThisSys variants shall be capable activating and deactivating a water pump. The water pump will send water to an irrigation system.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -50,7 +50,120 @@ The operator requirements for \ThisSystem are listed below.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item Add as many of these as necessary.  Split into files, e.g., OperatorInputs.tex and OperatorOutputs.tex, as needed. Just use the RequirementNumberAM command to keep numbers correct if subsubsections are added.
+  \item The water pump will control water flow to an irrigation system.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.3}
+% #2 is Title
+{Temperature Measurements}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of measuring temperature within 0.5\degree C/F.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Temperature will be measured via the \ThisSys temperature sensor.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.4}
+% #2 is Title
+{Soil Moisture Measurements}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of measuring soil moisture levels.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Soil moisture will be measured via the \ThisSys soil moisture sensor.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.5}
+% #2 is Title
+{\ThisSys Mode Toggling}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of toggling through set modes via a button interface.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Button interface will switch the active \GCS mode.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.6}
+% #2 is Title
+{\ThisSys Mode Display}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of displaying it's active mode via an LCD display.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item An LCD display will show the active \GCS mode.
 }
 % #9 is changebar version
 {P1}
