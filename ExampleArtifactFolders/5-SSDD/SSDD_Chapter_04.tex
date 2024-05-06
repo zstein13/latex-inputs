@@ -9,15 +9,92 @@
 
 \chapter{System Architectural Design}
 \label{loc:SystemArchitecturalDesign}
-\input{DIDINFO_Snippets/SSDD/SSDD_4.0.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_4.0.0_DIDINFO.tex}
 
-This chapter describes the system architectural design.
+This chapter describes the system architectural design for the \ThisSystem. An overview of all system components is shown in Figure~\ref{fig:SYS-O}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6.5in]{./images/system_overview.png}
+	\caption[System Architectural Overview]{System Architectural Overview Diagram}
+	\label{fig:SYS-O}
+\end{figure}
 
 \section{System Components}
 \label{loc:SystemComponents}
-\input{DIDINFO_Snippets/SSDD/SSDD_4.1.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_4.1.0_DIDINFO.tex}
 
 This section lists and describes the system components.
+
+\subsection{Raspberry Pi Pico W}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Pico\textunderscore 1}
+    \item[Relationships] 
+    \item[Purpose] The Raspberry Pi Pico W is the microcontroller of the entire \ThisSystem. Satisfies requirement 3.10.1.1.
+    \item[Development Status] Existing
+    \item[Description] Raspberry Pi Pico W
+\end{description}
+
+\subsection{Temperature Sensor}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Sense\textunderscore 1}
+    \item[Relationships] Interacts with Pico\textunderscore 1
+    \item[Purpose] The temperature sensor measures environmental temperature data. Satisfies requirement 3.2.1.4.
+    \item[Development Status] Existing
+    \item[Description] BME280 Temperature Sensor
+\end{description}
+
+\subsection{Soil Moisture Sensor}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Sense\textunderscore 2}
+    \item[Relationships] Interacts with \textbf{Pico\textunderscore 1}
+    \item[Purpose] The soil moisture sensor measures the soil moisture of the user's garden. Satisfies requirement 3.2.1.5.
+    \item[Development Status] Existing
+    \item[Description] I2C Capacitive Moisture Sensor
+\end{description}
+
+\subsection{Water Pump}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Pump\textunderscore 1}
+    \item[Relationships] Controlled by \textbf{Pico\textunderscore 1}
+    \item[Purpose] The water pump pumps water from the water supply to the drip irrigation tubing. This is how the irrigation system activates. Satisfies requirement 3.2.1.2.
+    \item[Development Status] Existing
+    \item[Description] US Solar Pump B3A 5V PWM Circulating Pump
+\end{description}
+
+\subsection{Button Interface}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Int\textunderscore 1}
+    \item[Relationships] Interacts with \textbf{Pico\textunderscore 1} and \textbf{Int\textunderscore 2}
+    \item[Purpose] The button interface controls mode changes for \ThisSys. Satisfies requirement 3.2.1.6.
+    \item[Development Status] Existing
+    \item[Description] GPIO Pin Buttons
+\end{description}
+
+\subsection{LCD Display}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Int\textunderscore 2}
+    \item[Relationships] Interacts with \textbf{Pico\textunderscore 1} and\textbf{Int\textunderscore 1}
+    \item[Purpose] The LCD Display displays the active mode for \thisSys. Satisfies requirement 3.2.1.7.
+    \item[Development Status] Existing
+    \item[Description] Adafruit Standard HD44780 LCD
+\end{description}
+
+\subsection{Drip Irrigation Tubing}
+
+\begin{description}
+    \item[Project Unique ID] \textbf{Out\textunderscore 1}
+    \item[Relationships] Connected to \textbf{Pump\textunderscore 1}
+    \item[Purpose] The drip irrigation tubing control how much water leaves the irrigation system. Satisfies requirement 3.2.1.1.
+    \item[Development Status] Existing
+    \item[Description] Rain Bird Drip Irrigation Tubing
+\end{description}
 
 
 \section{Concept of Execution}
