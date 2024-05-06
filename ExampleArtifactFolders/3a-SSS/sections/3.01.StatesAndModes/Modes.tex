@@ -1,6 +1,6 @@
 
 A summary of the modes is provided in Table~\ref{tab:Modes}.
-This table also provides a list of the sub-states in which each mode is valid.
+This table also provides a list of the states in which each mode is valid.
 See the formal specifications, if applicable, in the following sections for formal statement of the mode requirements, and accompanying notes that provide further clarification on the meanings of the states.
 \begin{table}[htbp]
 	\begin{center}
@@ -9,12 +9,12 @@ See the formal specifications, if applicable, in the following sections for form
 			\hline
 			     \multicolumn{3}{|c|}{{\bf MODES}}\\
 			\hline
-{\bf Name} & {\bf Summary}	& {\bf Valid Sub-States}\\
+{\bf Name} & {\bf Summary}	& {\bf Valid States}\\
 			\hline
 			\hline
-Mode 1 & Mode 1 summary & Sub-State A\\ \hline
-Mode 2 & Mode 2 summary & Sub-State B\\ \hline
-Mode 3 & Mode 3 summary & Sub-State C\\ 
+Active Monitoring & The \ThisSys shall actively monitor environmental data to determine if and when the irrigation system needs to activate. & Irrigation On Irrigation Off \\ \hline
+Scheduled & The \ThisSys irrigation system will be on a set schedule and regularly activate after a certain time has passed.  & Irrigation On Irrigation Off\\ \hline
+Manual Activation & The \ThisSys irrigation system is manually activated. & Irrigation On Irrigation Off\\ 
 			\hline
 			\hline
 			\end{tabular}
@@ -32,14 +32,14 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Mode One}
+{Active Monitoring}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:ModeOne}
 % #4 is Text of the specification
-{The system shall provide the Mode-1 mode.}
+{The \ThisSystem shall actively monitor environmental data to determine if and when the irrigation system needs to activate.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -49,7 +49,7 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The Mode-1 mode generalizes the case where the system is \TBD.
+	\item The Active Monitoring state describes the capability to actively monitoring environmental data and decided whether or not to activate the \ThisSys irrigation system.
 }
 % #9 is changebar version
 {P1}
@@ -61,14 +61,14 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 % #1 is requirement Number
 {\RqtNumberBase.2}
 % #2 is Title
-{Mode Two}
+{Scheduled}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:ModeTwo}
 % #4 is Text of the specification
-{The system shall provide the Mode-2 mode.}
+{The \ThisSystem irrigation system will be activated and run on a set schedule.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -78,7 +78,7 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The Mode-2 mode generalizes the case where the system is \TBD.
+	\item The irrigation system will be able to run via a schedule. In the Scheduled mode, \ThisSys will activate the irrigation system for a set time and duration.
 }
 % #9 is changebar version
 {P1}
@@ -90,14 +90,14 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 % #1 is requirement Number
 {\RqtNumberBase.3}
 % #2 is Title
-{Mode Three}
+{Manual Activation}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:ModeThree}
 % #4 is Text of the specification
-{The system shall provide the Mode-3 mode.}
+{The \ThisSystem irrigation system shall be manually activated.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -107,7 +107,7 @@ Mode 3 & Mode 3 summary & Sub-State C\\
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The Mode-3 mode generalizes the case where the system is \TBD.
+	\item The manual activation state disregards environmental data measured by the \ThisSys sensors. The irrigation system will be activated for a set time period or can be manually turned off.
 }
 % #9 is changebar version
 {P1}

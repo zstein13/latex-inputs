@@ -8,20 +8,33 @@
 
 \chapter{Operational scenarios}
 \label{chap:Operational scenarios}
-\input{DIDINFO_Snippets/OCD/OCD_6.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/OCD/OCD_6.0_DIDINFO.tex}
 
-This chapter is \TBD.
+This chapter will detail certain operational scenarios for the \ThisSystem. Use cases will be listed below and the operational scenario will be described.
 
 
-\section{Use Case 1}
+\section{Use Case: Watering Schedule}
 \label{loc:UseCase1}
-\input{DIDINFO_Snippets/OCD/OCD_6.1_DIDINFO.tex}
+% \input{DIDINFO_Snippets/OCD/OCD_6.1_DIDINFO.tex}
 
-This section is \TBD.
+The \ThisSystem will control it's watering system on a set schedule. By default, the watering system will be activated every 6 hours. The watering system will be active for 10 minutes and then shut off.
+This process will be able to be turned off and on. Gardeners can decide if they want to set a watering schedule. The watering system will be able to be activated manually as well.
 
 
-\section{Use Case 2}
+\section{Use Case: Manual Watering}
 \label{loc:UseCase2}
 %\input{DIDINFO_Snippets/OCD/OCD_6.1_DIDINFO.tex}
 
-This section is \TBD.
+The \ThisSystem will allow gardeners to manually turn on/off the watering system. Gardeners will either toggle the system on/off. 
+
+\section{Use Case: Environmental Watering}
+\label{loc:UseCase3}
+
+The \ThisSystem will activate it's watering system based on different environmental factors. \ThisSys will have sensors to monitor temperature, soil moisture, etc. 
+Based on certain environmental thresholds, the system will toggle on/off the watering system. More information about the environmental thresholds and factors will be added to this use case later.
+
+\section{Use Case: Future Use Cases}
+\label{loc:UseCase4}
+\input{DIDINFO_Snippets/OCD/OCD_6.1_DIDINFO.tex}
+
+Future use cases will be added later on.

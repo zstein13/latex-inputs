@@ -3,14 +3,14 @@
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Operator}
+{Rain Bird Drip Irrigation Tubing}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:Operator}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of connecting to an Operator.}
+{All \ThisSys variants shall be capable of connecting to a drip irrigation system made from Rain Bird Tubing.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -20,7 +20,187 @@
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item N/A
+  \item The irrigation system will be connected to the \ThisSystem.
+  \item The irrigation system will be controlled by a water pump.
+  \item \href{https://www.homedepot.com/p/Rain-Bird-1-2-in-0-71-in-O-D-x-100-ft-Distribution-Tubing-for-Drip-Irrigation-T70-100S/204751445}{Product Page}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.2}
+% #2 is Title
+{US Solar Pump B3A 5V PWM Circulating Pump}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a US Solar Pump B3A 5V PWM Circulating Pump that is capable of pumping water to drip irrigation tubing.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The water pump will be controlled by the \ThisSystem. 
+  \item The pump must be a 5V pump
+  \item The water pump must be connected to a water source (i.e. hose or water tank)
+  \item \href{https://www.ussolarpumps.com/catalog/5v-pwm-wired-pumps/b3a-5v-pwm-circulating-pump/}{Product Page}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.3}
+% #2 is Title
+{Water Supply}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a water supply.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The water supply can be a water tank or hose.
+  \item The water supply will feed into the water pump.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.4}
+% #2 is Title
+{BME280 Temperature Sensor}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a BME280 temperature sensor and interpreting sensor data.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The temperature sensor will measure air temperature. 
+  \item \href{https://cdn-learn.adafruit.com/assets/assets/000/115/588/original/bst-bme280-ds002.pdf?1664822559}{Datasheet}
+  \item \href{https://github.com/adafruit/Adafruit_BME280_Library}{BME280 Driver}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.5}
+% #2 is Title
+{I2C Capacitive Moisture Sensor}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a I2C Capacitive Moisture Sensor and interpreting sensor data.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The I2C Capacitive Moisture Sensor measures soil moisture with a capacitive measurement. 
+  \item \href{https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor}{Datasheet}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.6}
+% #2 is Title
+{GPIO Push Button Interface}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting a button to a GPIO pin.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item A Button interface will allow \ThisSystem users to activate manual and scheduled modes.
+  \item Each push button will represent a different watering mode.
+  \item \href{https://projects.raspberrypi.org/en/projects/introduction-to-the-pico/10}{Raspberry Pi Pico Button Guide}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.7}
+% #2 is Title
+{Adafruit Standard HD44780 LCD}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a Adafruit Standard HD44780 LCD and displaying which mode \ThisSys is set to.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item A LCD display will visualize what modes \ThisSys is set to.
+  \item \href{https://cdn-shop.adafruit.com/datasheets/HD44780.pdf}{Datasheet}
 }
 % #9 is changebar version
 {P1}

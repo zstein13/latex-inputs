@@ -5,14 +5,14 @@ The operator requirements for \ThisSystem are listed below.
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Power}
+{Garden Drip Irrigation}
 % #3 is requirement label (expected to be of form rqt:XXX)
-{rqt:Operator Inputs}
+{rqt:Operator Outputs}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of \TBD operator inputs.}
+{All \ThisSys variants shall be capable of proper garden drip irrigation until environmental thresholds are met or a set time duration has passed. The drip irrigation system will be made up of Rain Bird Drip Irrigation Tubing.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -22,7 +22,8 @@ The operator requirements for \ThisSystem are listed below.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item Add as many of these as necessary. Split into files, e.g., OperatorInputs.tex and OperatorOutputs.tex, as needed. Just use the RequirementNumberAM and RqtNumberBase commands to keep numbers correct if subsubsections are added.
+  \item The irrigation system will be capable of watering a garden of a set size.
+  \item \href{https://www.homedepot.com/p/Rain-Bird-1-2-in-0-71-in-O-D-x-100-ft-Distribution-Tubing-for-Drip-Irrigation-T70-100S/204751445}{Rain Bird Tubing}
 }
 % #9 is changebar version
 {P1}
@@ -33,14 +34,14 @@ The operator requirements for \ThisSystem are listed below.
 % #1 is requirement Number
 {\RqtNumberBase.2}
 % #2 is Title
-{Power}
+{Water Pump}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:Operator Outputs}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of \TBD operator outputs.}
+{All \ThisSys variants shall be capable activating and deactivating a US Solar Pump B3A 5V PWM Circulating water pump. The water pump will send water to a drip irrigation system and will be capable of running for 24-hours.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -50,7 +51,124 @@ The operator requirements for \ThisSystem are listed below.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item Add as many of these as necessary.  Split into files, e.g., OperatorInputs.tex and OperatorOutputs.tex, as needed. Just use the RequirementNumberAM command to keep numbers correct if subsubsections are added.
+  \item The water pump will control water flow to an irrigation system.
+  \item \href{https://www.ussolarpumps.com/catalog/5v-pwm-wired-pumps/b3a-5v-pwm-circulating-pump/}{US Solar Pump B3A 5V PWM Circulating Water Pump Product Page}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.3}
+% #2 is Title
+{Temperature Measurements}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of measuring temperature through the BME280 Temperature Sensor.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Temperature will be measured via the \ThisSys temperature sensor.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.4}
+% #2 is Title
+{Soil Moisture Measurements}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of measuring soil moisture levels through the I2C Capacitive Moisture Sensor.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Soil moisture will be measured via the \ThisSys soil moisture sensor.
+  \item \href{https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor}{Datasheet}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.5}
+% #2 is Title
+{\ThisSys Mode Toggling}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of toggling through set modes via a button interface connected to GPIO Pins.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item Button interface will switch the active \GCS mode.
+  \item \item \href{https://projects.raspberrypi.org/en/projects/introduction-to-the-pico/10}{Raspberry Pi Pico Button Guide}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.6}
+% #2 is Title
+{\ThisSys Mode Display}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator Inputs}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of displaying it's active mode via an Adafruit Standard HD44780 LCD Display.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item An LCD display will show the active \GCS mode.
+  \item \href{https://cdn-shop.adafruit.com/datasheets/HD44780.pdf}{Datasheet}
 }
 % #9 is changebar version
 {P1}

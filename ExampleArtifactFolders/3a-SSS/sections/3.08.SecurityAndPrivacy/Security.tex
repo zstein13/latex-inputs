@@ -1,38 +1,61 @@
-\subsubsection{Physical Security}
-\label{sssec_Physical_Security}
-\RequirementNumberAM{subsubsection}{3.8.1.1}
-
+\subsubsection{Cyber Security}
+\label{sssec_Cyber_Security}
+\RequirementNumberAM{subsubsection}{3.8.1.2}
 
 %%% \ONERQMTV[9] is macro for consistently formatted requirements
 \ONERQMTV
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Anti-Tamper}
+{Critical and High Vulnerability Findings}
 % #3 is requirement label (expected to be of form rqt:XXX)
-{rqt:AntiTamper}
+{rqt:Vulns}
 % #4 is Text of the specification
-{The \ThisSystem shall deter all unauthorized alterations, countermeasure development, and system exploitation.}
+{The \ThisSystem shall not use any software packages or libraries that have critical and high vulnerability findings.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
-{This requirement shall be verified by testing.}
+{This requirement shall be verified by vulnerability scans.}
 %% #7 is Traceability
 {
 \item [N/A] This is a base requirement.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item N/A
+	\item Vulnerability scans can be conducted by open source tools. Any critical or high vulnerability findings must be acted on and the vulnerability must be remediated.
+	\item \href{https://owasp.org/www-community/Vulnerability_Scanning_Tools}{List of Open Source scanning tools.}
 }
 % #9 is changebar version
 {P1}
 %%%%% end \ONERQMTV[9] macro
 
-\subsubsection{Cyber Security}
-\label{sssec_Cyber_Security}
-\RequirementNumberAM{subsubsection}{3.8.1.2}
-
-This section is provided for future expansion.
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTV
+% #1 is requirement Number
+{\RqtNumberBase.2}
+% #2 is Title
+{OWASP Top 10}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Vulns}
+% #4 is Text of the specification
+{The \ThisSystem software development process shall avoid security concerns outlined in the OWASP Top 10.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by vulnerability scans.}
+%% #7 is Traceability
+{
+\item [N/A] This is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+	\item The OWASP Top 10 is a regularly-updated report outlining security concerns for web application security, focusing on the 10 most critical risks.
+	\item \href{https://owasp.org/www-project-top-ten/}{OWASP Top 10}
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
