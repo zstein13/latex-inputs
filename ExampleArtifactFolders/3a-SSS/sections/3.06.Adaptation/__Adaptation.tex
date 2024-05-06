@@ -2,6 +2,43 @@
 \section{Adaptation Requirements}
 \label{lab:sec_Adaptation}
 \RequirementNumberAM{section}{3.6}
-\input{DIDINFO_Snippets/SPS-SSS/SPS-SSS_3.6.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SPS-SSS/SPS-SSS_3.6.0_DIDINFO.tex}
 
-This section is provided for future expansion.
+This section lists the adaptation requirements for the system. The \ThisSys capability is segmented into the following specification groups:
+
+\begin{description}
+	\item [Temperature Conversions] describes the adaptation requirements pertaining to temperature measurements, \S~\ref{loc:ADAPTATION_TEMP}.
+\end{description}
+
+\KNEADSUBSECTIONNEWPAGE
+\subsection{Temperature Conversions}
+\label{loc:ADAPTATION_TEMP}
+\RequirementNumberAM{subsection}{3.6.1}
+
+%%% \ONERQMTVKSA[9] is macro for consistently formatted requirements
+\ONERQMTV
+% #1 is requirement Number
+{\RqtNumberBase.1}
+% #2 is Title
+{Temperature Conversions}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Temperature_Conversions}
+% #4 is Text of the specification
+{Temperature data measured must be capable of being converted to \degree F and \degree C}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+\item [N/A] This is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+	\item Temperature can be converted between Farenheit and Celcius.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
