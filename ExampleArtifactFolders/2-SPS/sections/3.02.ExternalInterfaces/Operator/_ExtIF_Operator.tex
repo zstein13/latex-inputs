@@ -3,14 +3,14 @@
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{Operator}
+{Irrigation System}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:Operator}
 % #4 is Text of the specification
-{All \ThisSys variants shall be capable of connecting to an Operator.}
+{All \ThisSys variants shall be capable of connecting to a irrigation system.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
 {This requirement shall be verified by demonstration.}
@@ -20,7 +20,179 @@
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-  \item N/A
+  \item The irrigation system will be connected to the \ThisSystem.
+  \item The irrigation system will be controlled by a water pump.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.2}
+% #2 is Title
+{Water Pump}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a water pump and pumping water to an irrigation system.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The water pump will be controlled by the \ThisSystem. 
+  \item The water pump will connect to an irrigation system.
+  \item The water pump must be connected to a water source (i.e. hose or water tank)
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.3}
+% #2 is Title
+{Water Supply}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a water supply.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The water supply can be a water tank or hose.
+  \item The water supply will feed into the water pump.
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.4}
+% #2 is Title
+{Temperature Sensor}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a temperature sensor and interpreting sensor data.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The temperature sensor will measure air temperature. 
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.5}
+% #2 is Title
+{Soil Moisture Sensor}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a soil moisture sensor and interpreting sensor data.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item The soil moisture sensor will measure soil moisture levels of a garden bed. 
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.6}
+% #2 is Title
+{Button Interface}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a button interface and responding to button inputs.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item A Button interface will allow \ThisSystem users to activate manual and scheduled modes. 
+}
+% #9 is changebar version
+{P1}
+%%%%% end \ONERQMTV[9] macro
+
+%%% \ONERQMTV[9] is macro for consistently formatted requirements
+\ONERQMTVKPP
+% #1 is requirement Number
+{\RqtNumberBase.7}
+% #2 is Title
+{LCD Display}
+% #3 is requirement label (expected to be of form rqt:XXX)
+{rqt:Operator}
+% #4 is Text of the specification
+{All \ThisSys variants shall be capable of connecting to a LCD Display and displaying which mode \ThisSys is set to.}
+% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
+{
+	\item [All Phases] Threshold
+}
+% #6 is Acceptance
+{This requirement shall be verified by demonstration.}
+% #7 is Traceability
+{
+	\item [N/A] This requirement is a base requirement.
+}
+% #8 is Notes; listed as enumeration \item ...
+{
+  \item A LCD display will visualize what modes \ThisSys is set to. 
 }
 % #9 is changebar version
 {P1}
