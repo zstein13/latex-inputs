@@ -4,28 +4,19 @@
 %
 %%% 
 %%% set this to the report number for use in footers
-\renewcommand{\KNEADdocumentRevision}{P3}
-\renewcommand{\KNEADdocumentNum}{MILREPSSS20210621}% used in right footer
-\renewcommand{\KNEADeffectiveDate}{16 Mar 2022}% usually a fixed data, often date of first approved release, mainly for QMS documents
+\renewcommand{\KNEADdocumentRevision}{P1:\svnfilerev}
+\renewcommand{\KNEADdocumentNum}{KNEADSTS20240313}% used in right footer
+\renewcommand{\KNEADeffectiveDate}{13 Mar 2024}% usually a fixed data, often date of first approved release, mainly for QMS documents
 \renewcommand{\KNEADrevisionDate}{\today}%{\today or formatted as 16 Nov 2020}
-\renewcommand{\KNEADreleasedBy}{Lewis Collier, Chris Doerge, Shaun Parvin, and Brady Spatola}% used in right footer
-\renewcommand{\KNEADdocumentCopyRightYear}{2022}
+\renewcommand{\KNEADreleasedBy}{Lewis Collier}% used in right footer
+\renewcommand{\KNEADdocumentCopyRightYear}{2024}
 
 
 %Set title in  ``TitlePage''.tex using this document title              
 \renewcommand{\KNEADartifactTitle}{%can't use variable with an index for some reason
-{\Large Operational Concept Description}\break
+{\Large System Test Specification}\break
 for the\break
-{\Large Broadcast Dissemination Platform\break
-Family of Systems}\break}
-
-%\renewcommand{\KNEADtitlePageTitle}
-%{
-%\KNEADartifactTitle\break
-%\KNEADdocumentNum\break
-%DCN: \KNEADdocumentNum-\KNEADdocumentRevision\break
-%Revision Date: \KNEADrevisionDate
-%}
+{\Large KNEAD Example System}}
 
 
 % comment out the following lines to force newpages at major section divisions
@@ -36,18 +27,9 @@ Family of Systems}\break}
 \renewcommand{\KNEADSUBPARAGRAPHNEWPAGE}{} 
 
 %%%
-%%% packages used
+%%% Change tocdepth to override default of showing all 5 levels in TOC
+%%% (to avoid all the subpara repeated section names \in {items, inputs, performance, outputs})
 %%%
-
-\usepackage[nodayofweek]{datetime}
-
-\usepackage{titlesec}
-
-%\usepackage{soul}
-
-%https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/circledsteps/circledsteps-manual.pdf
-% circles for SE diagram in text
-\usepackage{circledsteps}
-\pgfkeys{/csteps/inner color=white}
-\pgfkeys{/csteps/outer color=orange}
-\pgfkeys{/csteps/fill color=blue}
+%%% %part,ch,sec,ssec,sssec,para,subpara
+%%%   -1,  0,  1,  2,    3,   4,    5
+\setcounter{tocdepth}{2}% LOTS of duplicates for test cases so ignore in TOC
