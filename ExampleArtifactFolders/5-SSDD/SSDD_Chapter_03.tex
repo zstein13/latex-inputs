@@ -9,6 +9,50 @@
 
 \chapter{System-wide Design Decisions}
 \label{loc:SystemWideDesignDecisions}
-\input{DIDINFO_Snippets/SSDD/SSDD_3.0.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_3.0.0_DIDINFO.tex}
 
-This section provides an overview of the system wide design decisions for \ThisSys.
+This section provides an overview of the system wide design decisions for \ThisSys. The system wide design decisions overview will be broken into three sections.
+Each section will represent one of the \ThisSys modes. Each mode represents a different method \ThisSys uses to control the irrigation system. Users can switch between modes via a button interface
+and the active mode will be displayed on the \ThisSys LCD display.
+
+The three modes for \ThisSys are: 
+\begin{description}
+    \item[Active Monitoring] Environmental data is actively monitored to determine if and when the \ThisSys irrigation system needs to activate.
+    \item[Scheduled] The \ThisSys irrigation system is on a set schedule and regularly activates/deactivates.
+    \item[Manual Activation] The \ThisSys irrigation system can be manually activated.
+\end{description}
+
+\section{Active Monitoring}
+\label{loc:activeMonitoring}
+
+The active monitoring mode is the main feature of the \ThisSystem. \ThisSys will be monitoring temperature data through a temperature sensor and soil moisture data through a soil moisture sensor.
+Environmental thresholds will be set and if the measured data crosses an environmental threshold, the \ThisSys irrigation system will be activated/deactivated.
+
+\subsection{Temperature Threshold}
+Temperature is measured in \degree C within 0.5 \degree accuracy. 
+The temperature data's output resolution is to the nearest hundreth of a \degree C. Generally, plants begin to experience stress when temperatures are above 86 \degree F or 30 \degree C.
+The temperature threshold value will be set as a system wide environmental variable. The value for the temperature threshold will be 86 \degree F or 30 \degree C. 
+This temperature threshold represents when it is too hot for plants. 
+When \ThisSys measures a temperature at or above the threshold value for 5 consecutive minutes, \ThisSys will activate the irrigation system for 30 minutes. 
+After 30 minutes, \ThisSys will deactivate the irrigation system. \ThisSys will then wait 6 hours before activating again to prevent over watering. During this 6 hour time period,
+soil moisture threshold will not be able to trigger the irrigation system to activate.
+
+\subsection{Soil Moisture Thresholds}
+Soil Moisture is measured by the resistance of the soil. Valid measured values are between 0 - 1023. 0 being completely moist and 1023 being completely dry. If the value measured is between 600 - 1023, 
+the soil is considered dry. If the value measured is between 370 - 600, the soil is considered humid. If the value measured is less than 370, the sensor is most likely submerged under water. 
+There will be two soil moisture thresholds: a dry moisture threshold and a wet moisture threshold. Both values will be set as system wide environmental variables.
+The value for the dry soil moisture threshold will be 650. The value for the wet soil moisture threshold will be 450.
+When \ThisSys consistently measures the soil moisture level at or above 650 for 5 consecutive minutes, \ThisSys will activate the irrigation system.
+The \ThisSys irrigation system will remain active until the measured moisture level is at or below the wet soil moisture threshold of 450 for 5 consecutive minutes.
+
+\section{Scheduled}
+\label{loc:Scheduled}
+The scheduled mode will allow users to set a watering schedule for their garden. There will be three preset schedules available for users to select. Users will be able to toggle between the different schedules
+by pressing the button for the scheduled mode multiple times. Users can preset the \ThisSys irrigation system to activate every 3 hours, 6 hours, or 12 hours. When the scheduled mode is active, 
+\ThisSys will use the pico-sdk to get the current time and set a time the \ThisSys irrigation system will activate. The \ThisSys irrigation system will activate for 30 minutes every 3, 6, or 12 hours.
+
+\section{Manual Activation}
+\label{loc:Manual}
+The Manual Activation mode will allow users to manually control when their garden gets watered. Users will be able to manually activate the \ThisSys irrigation system by pressing the same button that switches \ThisSys 
+to the Manual Activation mode. When the \ThisSys irrigation system is manually activated, it will run for 30 minutes. After 30 minutes, the \ThisSys irrigation system will deactivate and \ThisSys will wait for the next manual activation.
+Users will also be able to deactivate an active irrigation system. If the \ThisSys irrigation system is running, a user can press the Manual Activation mode button and the irrigation system will deactivate.

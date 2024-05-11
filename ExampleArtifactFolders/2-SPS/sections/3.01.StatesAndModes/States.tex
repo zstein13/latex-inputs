@@ -8,12 +8,11 @@ See the formal specifications, if applicable, in the following sections for form
 			\hline
 			\multicolumn{2}{|c|}{{\bf STATES}} \\
 			\hline
-				{\bf State Name} & {\bf Summary} \\
+				{\bf State Name} & {\bf \ThisSystem States} \\
 			\hline
 			\hline
-State 1 & summary \\ \hline
-State 2 & summary \\ \hline
-State 3 & summary \\ 
+Irrigation On & The \ThisSys irrigation system is active.   \\ \hline
+Irrigation Off & The \ThisSys irrigation system is off.  \\ \hline 
 			\hline
 			\hline
 		\end{tabular}
@@ -31,24 +30,24 @@ State 3 & summary \\
 % #1 is requirement Number
 {\RqtNumberBase.1}
 % #2 is Title
-{State One}
+{Irrigation On}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:StateOne}
 % #4 is Text of the specification
-{The system shall provide the State-1 state.}
+{Irrigation On}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
-{This requirement shall be verified by demonstration.}
+{This requirement shall be verified by demonstration that the \ThisSystem activates the irrigation system.}
 % #7 is Traceability
 {
 	\item [N/A] This requirement is a base requirement.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The State-1 state generalizes the case where the system is \TBD.
+	\item The irrigation system is able to turn on. The system will control a drip irrigation system.
 }
 % #9 is changebar version
 {P1}
@@ -60,53 +59,24 @@ State 3 & summary \\
 % #1 is requirement Number
 {\RqtNumberBase.2}
 % #2 is Title
-{State Two}
+{Irrigation Off}
 % #3 is requirement label (expected to be of form rqt:XXX)
 {rqt:StateTwo}
 % #4 is Text of the specification
-{The system shall provide the State-2 state.}
+{The \ThisSys irrigation system is deactivated.}
 % #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
 {
-	\item [Phase 1] Threshold
+	\item [All Phases] Threshold
 }
 % #6 is Acceptance
-{This requirement shall be verified by demonstration.}
+{This requirement shall be verified by demonstration that the \ThisSys irrigation system is deactivated.}
 % #7 is Traceability
 {
 	\item [N/A] This requirement is a base requirement.
 }
 % #8 is Notes; listed as enumeration \item ...
 {
-	\item The State-2 state generalizes the case where the system is \TBD.
-}
-% #9 is changebar version
-{P1}
-%%%%% end \ONERQMTV[9] macro
-
-
-%%% \ONERQMTV[9] is macro for consistently formatted requirements
-\ONERQMTV
-% #1 is requirement Number
-{\RqtNumberBase.3}
-% #2 is Title
-{State Three}
-% #3 is requirement label (expected to be of form rqt:XXX)
-{rqt:StateThree}
-% #4 is Text of the specification
-{The system shall provide the State-3 state.}
-% #5 is Status (S in {(T), (O), (I), (D)} listed by phase as \item [] S)
-{
-	\item [Phase 1] Threshold
-}
-% #6 is Acceptance
-{This requirement shall be verified by demonstration.}
-% #7 is Traceability
-{
-	\item [N/A] This requirement is a base requirement.
-}
-% #8 is Notes; listed as enumeration \item ...
-{
-	\item The State-3 state generalizes the case where the system is \TBD.
+	\item N/A
 }
 % #9 is changebar version
 {P1}
