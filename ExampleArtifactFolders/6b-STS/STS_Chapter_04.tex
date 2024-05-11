@@ -1,32 +1,22 @@
 %%% SVN stuff
 \svnidlong
-{$HeadURL: https://192.168.1.5/svn/NASC/_Projects/High%20Gain%20Array%20-%20HGA/SystemDocuments/3%20-%20SSS/SSS_Chapter_01.tex $}
-{$LastChangedDate: 2017-01-05 10:31:09 -0500 (Thu, 05 Jan 2017) $}
-{$LastChangedRevision: 443 $}
-{$LastChangedBy: LCollier $}
-\svnid{$Id: OCD_Chapter_04.tex 443 2017-01-05 15:31:09Z LCollier $}
+{$HeadURL: https://svn.riouxsvn.com/kneadlatxinputs/ExampleArtifactFolders/6b-STS/STS_Chapter_04.tex $}
+{$LastChangedDate: 2024-03-14 00:31:03 -0400 (Thu, 14 Mar 2024) $}
+{$LastChangedRevision: 94 $}
+{$LastChangedBy: KneadProject $}
+\svnid{$Id: STS_Chapter_04.tex 94 2024-03-14 04:31:03Z KneadProject $}
 
+\chapter{Test Specifications}
+\label{loc:TestSpecifications}
+% \input{DIDINFO_Snippets/STS/STS_4.0.0_DIDINFO.tex}
 
-\chapter{Justification for and nature of changes}
-\label{chap:Justification for and nature of changes}
-\input{DIDINFO_Snippets/OCD/OCD_4.0_DIDINFO.tex}
+This section specifies the tests to be performed.
+\newcommand{\StsTestCaseID}{Packets}%define here so all test case files are \renewcommands
 
-\section{Justification for change}
-\label{sec:Justification for change}
-\input{DIDINFO_Snippets/OCD/OCD_4.1_DIDINFO.tex}
+\newcommand{\StsTestSpecID}{WiFi Test}% used in file for unique labels
+\input{STS_Chapter_04.x_TestSpecBase}%Copy this file, rename, and update for each test.
 
-\section{Description of needed changes}
-\label{sec:Description of needed changes}
-\input{DIDINFO_Snippets/OCD/OCD_4.2_DIDINFO.tex}
+% \renewcommand{\StsTestSpecID}{Test2}% used in file for unique labels
+% \input{STS_Chapter_04.x_TestSpecBase}%Copy this file, rename, and update for each test.
 
-\section{Priorities among the changes}
-\label{sec:Priorities among the changes}
-\input{DIDINFO_Snippets/OCD/OCD_4.3_DIDINFO.tex}
-
-\section{Changes considered but not included}
-\label{sec:Changes considered but not included}
-\input{DIDINFO_Snippets/OCD/OCD_4.4_DIDINFO.tex}
-
-\section{Assumptions and constraints}
-\label{sec:Assumptions and constraints}
-\input{DIDINFO_Snippets/OCD/OCD_4.5_DIDINFO.tex}
+\DIDINFOON%turn them back on since they were turned off after first test case
