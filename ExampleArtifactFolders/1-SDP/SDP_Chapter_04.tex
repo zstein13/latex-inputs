@@ -17,7 +17,16 @@ This chapter will provide a brief overview of the required hardware and firmware
 \label{loc:SDP_HardwareDevelopmentPlans}
 % \input{DIDINFO_Snippets/SDP/SDP_4.1.0_DIDINFO.tex}
 
-There will be no hardware development for this project. All development will take place on a Raspberry Pi Pico W development kit.
+There will be no hardware development for this project. All development will take place on a Raspberry Pi Pico W development kit. Required hardware to be sourced for the project are:
+\begin{itemize}
+    \item \RaspPi
+    \item Button Interface
+    \item LCD Display
+    \item Temperature Sensor
+    \item Soil Moisture Sensor
+    \item Water Pump
+    \item Drip irrigation tubing
+\end{itemize}
 
 \section{Firmware Development Plans}
 \label{loc:SDP_FirmwareDevelopmentPlans}
@@ -49,6 +58,7 @@ The development assignments are as follows:
     \end{itemize}
 \end{itemize}
 
+Firmware must be developed to incorporate the Temperature and soil moisture sensors. These sensors will influence the watering modes of \ThisSys.
 \section{Software Development Plans}
 \label{loc:SDP_SoftwareDevelopmentPlans}
 % \input{DIDINFO_Snippets/SDP/SDP_4.3.0_DIDINFO.tex}
@@ -89,16 +99,22 @@ Additionally, in sections 2.2 and 2.3, there are installation instructions for r
     \item build-essential
 \end{itemize}
 
-
-
-The software development plan for this project is still \TBD. This section will be updated in the future.
+Software will need to be developed for users to switch between modes of the \ThisSystem and allow users to view which mode is active on the \ThisSystem.
 
 
 \section{Integration Plans}
 \label{loc:SDP_IntegrationPlans}
 % \input{DIDINFO_Snippets/SDP/SDP_4.4.0_DIDINFO.tex}
 
-The integration plans for this project are still \TBD. This section will be updated in the future.
+The integration plans for this project are:
+
+\begin{itemize}
+    \item Develop firmware for environmental sensors and water Pump
+    \item Develop software to allow for user input and mode switching
+    \item Develop tests for firmware/software integration with hardware components
+    \item Integrate firmware/software with hardware components
+    \item Complete integration tests
+\end{itemize}
 
 
 \section{Testing Plans}
