@@ -1,0 +1,22 @@
+%%% SVN stuff
+\svnidlong
+{$HeadURL: https://svn.riouxsvn.com/kneadlatxinputs/ExampleArtifactFolders/6b-STS/STS_Chapter_04.x_TestSpecBase.tex $}
+{$LastChangedDate: 2024-03-14 00:31:03 -0400 (Thu, 14 Mar 2024) $}
+{$LastChangedRevision: 94 $}
+{$LastChangedBy: KneadProject $}
+\svnid{$Id: STS_Chapter_04.x_TestSpecBase.tex 94 2024-03-14 04:31:03Z KneadProject $}
+
+\section{\StsTestSpecID}
+\label{loc:Test\StsTestSpecID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.0_DIDINFO.tex}
+
+Test \StsTestSpecID{Waterproof Test} will test the environmental housing for the \ThisSystem and verify that it meets the IP65 Waterproof rating.
+
+\renewcommand{\StsTestCaseID}{Waterproof Rating}% used in file for unique labels
+\input{STS_Chapter_04.2.1_TestCaseBase}%Copy this file, rename, and update for each test.
+
+% \DIDINFOOFF% turn them off since we've seen them all by now
+
+% \renewcommand{\StsTestCaseID}{Case2}% used in file for unique labels
+% \input{STS_Chapter_04.x.y_TestCaseBase}%Copy this file, rename, and update for each test.
+

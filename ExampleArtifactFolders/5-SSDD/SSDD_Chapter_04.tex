@@ -30,7 +30,7 @@ This section lists and describes the system components.
 
 \begin{description}
     \item[Project Unique ID] \textbf{Pico\textunderscore 1}
-    \item[Relationships] 
+    \item[Relationships] All Components
     \item[Purpose] The Raspberry Pi Pico W is the microcontroller of the entire \ThisSystem. Satisfies requirement 3.10.1.1.
     \item[Development Status] Existing
     \item[Description] Raspberry Pi Pico W
@@ -99,26 +99,82 @@ This section lists and describes the system components.
 
 \section{Concept of Execution}
 \label{loc:ConceptOfEExecution}
-\input{DIDINFO_Snippets/SSDD/SSDD_4.2.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_4.2.0_DIDINFO.tex}
 
 This section describes the concept of execution based on the system components.
+
+An overview of the concept of execution is shown in Figure~\ref{fig:COE}
+
+\begin{figure}[htbp]
+	\centering
+		\includegraphics[width=6.5in]{/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/zProjectWideData/images/SYS-DFD-0.png}
+	\caption[Concept of Execution Overview]{Concept of Execution Diagram}
+	\label{fig:COE}
+\end{figure}
+
+The \RaspPi controls the entire \ThisSystem. The button interface allows users to switch between \ThisSys active watering modes. The LCD display will show users which watering mode is active.
+When the active monitoring mode is active, the temperature and soil moisture sensors will provide \ThisSys with environmental information. If the environmental information meets any of the set environmental thresholds,
+the irrigation system will be activated. The water pump controls when the irrigation system is active. \ThisSys activates/deactivates the water pump to control the irrigation system.
 
 
 \section{Interface Design}
 \label{loc:InterfaceDesign}
-\input{DIDINFO_Snippets/SSDD/SSDD_4.3.0_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_4.3.0_DIDINFO.tex}
 
 This section describes the internal and external interface design based on the system components.
 
 
-\subsection{Interface One}
+\subsection{Raspberry Pi Pico W}
 \label{loc:InterfaceOne}
-\input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
+% \input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
 
-This section describes the internal and external interface design based on the system components.
+\begin{description}
+    \item[Type of Interface] System microcontroller
+    \item[Project Unique ID] \textbf{Pico\textunderscore 1}
+    \item[Name] \RaspPi
+    \item[Technical Name] RP2040 Raspberry Pi Pico W
+\end{description}
 
-\subsection{Interface Two}
+\subsection{Temperature Sensor}
 \label{loc:InterfaceTwo}
 %\input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
 
-This section describes the internal and external interface design based on the system components.
+\begin{description}
+    \item[Type of Interface] Environmental Sensor
+    \item[Project Unique ID] \textbf{Sense\textunderscore 1}
+    \item[Name] Temperature Sensor
+    \item[Technical Name] BME280 Temperature Sensor
+\end{description}
+
+\subsection{Soil Moisture Sensor}
+\label{loc:InterfaceThree}
+%\input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
+
+\begin{description}
+    \item[Type of Interface] Environmental Sensor
+    \item[Project Unique ID] \textbf{Sense\textunderscore 2}
+    \item[Name] Soil Moisture Sensor
+    \item[Technical Name] I2C Capacitive Moisture Sensor
+\end{description}
+
+\subsection{Button Interface}
+\label{loc:InterfaceFour}
+%\input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
+
+\begin{description}
+    \item[Type of Interface] Control Button Interface
+    \item[Project Unique ID] \textbf{Int\textunderscore 1}
+    \item[Name] Buttons
+    \item[Technical Name] GPIO Pin Buttons
+\end{description}
+
+\subsection{LCD Display}
+\label{loc:InterfaceFive}
+%\input{DIDINFO_Snippets/SSDD/SSDD_4.3.1_DIDINFO.tex}
+
+\begin{description}
+    \item[Type of Interface] Visual Interface
+    \item[Project Unique ID] \textbf{Int\textunderscore 2}
+    \item[Name] LCD Display
+    \item[Technical Name] Adafruit Standard HD44780 LCD
+\end{description}

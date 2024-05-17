@@ -1,0 +1,148 @@
+%%% SVN stuff
+\svnidlong
+{$HeadURL: https://svn.riouxsvn.com/kneadlatxinputs/ExampleArtifactFolders/6b-STS/STS_Chapter_04.x.y_TestCaseBase.tex $}
+{$LastChangedDate: 2024-03-14 23:32:07 -0400 (Thu, 14 Mar 2024) $}
+{$LastChangedRevision: 101 $}
+{$LastChangedBy: KneadProject $}
+\svnid{$Id: STS_Chapter_04.x.y_TestCaseBase.tex 101 2024-03-15 03:32:07Z KneadProject $}
+
+\subsection{\StsTestCaseID}
+\label{loc:Test\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.0_DIDINFO.tex}
+
+Test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} will verify and validate that the Garden Control System successfully 
+activates the GCS irrigation system during active watering mode when the temperature threshold is met.
+
+\subsubsection{Requirements Addressed}
+\label{loc:TestCaseRequirementsAddressed\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.1_DIDINFO.tex}
+
+This requirements validated by test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} are listed in \S~\ref{loc:TestCaseProcedure\StsTestSpecID\StsTestCaseID}.
+
+\subsubsection{Prerequisite Conditions}
+\label{loc:TestCasePrerequisiteConditions\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.2_DIDINFO.tex}
+
+This prerequisite condition for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} is a functional temperature sensor and working firmware for \ThisSys.
+
+\subsubsection{Inputs}
+\label{loc:TestCaseInputs\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.3_DIDINFO.tex}
+
+This inputs for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} are listed in \S~\ref{loc:TestCaseProcedure\StsTestSpecID\StsTestCaseID}.
+
+\subsubsection{Expected Outputs}
+\label{loc:TestCaseExpectedOutputs\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.4_DIDINFO.tex}
+
+This expected outputs for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} are listed in \S~\ref{loc:TestCaseProcedure\StsTestSpecID\StsTestCaseID}.
+
+\subsubsection{Evaluation Criteria}
+\label{loc:TestCaseEvaluationCriteria\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.5_DIDINFO.tex}
+
+This evaluation criteria for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} are listed in \S~\ref{loc:TestCaseProcedure\StsTestSpecID\StsTestCaseID}.
+
+\subsubsection{Assumptions and Constraints}
+\label{loc:TestCaseAssumptions\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.6_DIDINFO.tex}
+
+This assumptions and constraints for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} are:
+
+\begin{itemize}
+    \item A facility where temperature can be controlled and varied
+    \item Access to a water supply
+\end{itemize}
+
+\subsubsection{Procedure}
+\label{loc:TestCaseProcedure\StsTestSpecID\StsTestCaseID}
+% \input{DIDINFO_Snippets/STS/STS_4.x.y.7_DIDINFO.tex}
+
+This procedure for test \StsTestSpecID{Environmental Threshold Test} case \StsTestCaseID{Soil Moisture Threshold} is to vary the soil moisture and verify that the soil moisture sensor is measuring accurate moisture levels.
+When the measured soil moisture level rises above 650, the irrigation system will activate until the soil moisture level drops below 450.
+
+See step~\ref{loc:Step2} for how to reference specific steps.
+
+\TestProcedure%[6] arguments, denoted %N%-NAME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arg-1 is test procedure number, normally made from section#.X
+{%1%-PROCNUM
+\getcurrentref{subsubsection}.1
+}%1%-PROCNUM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arg-2 is test procedure name
+{%2%-PROCNUM
+Soil Moisture Threshold
+}%2%-PROCNUM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arg-3 is test procedure label, for use in references to the test procedure
+{loc:TestProc1}
+%
+%arg-4 is list of requirements validated in this test procedure label
+{%4%-RQMTS
+\tpRqmt{Starting moisture levels must be above 500}
+
+}%4%-RQMTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arg-5 is list of notes for this test procedure label
+{%5%-NOTES
+\tpNote{Moist soil measures between 375-600. Dry soil measures between 600-1023.}
+}%5%-NOTES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%arg-6 is list of steps for this test procedure label
+% provided as a list of special commands tpStepXYZ[2], tpStep[3], or tpStepLabeled[4]
+{%6%-STEPS
+%
+%RECORD PRE-TEST INFORMATION
+\input{/Users/zsteinberg/UMD/ENPM818I/LatexInputs/ExampleArtifactFolders/zProjectWideData/KNEAD_PreTestInfo.tex}%from $TEXINPUTS; make a local copy and adjust as appropriate.
+%
+% use these as section delineators as needed; pick image that best fits the need
+% \tpStepCLOCK{CLOCK TEXT -- good to show that some time must elapse} 
+% \tpStepHAND{HAND TEXT -- use, with text, when tester needs to pause and double check things} 
+\tpStepINFO{Let soil dry out}
+% \tpStepKEY{KEY TEXT -- good to make a key point, or if something needs to be locked/unlocked}
+% \tpStepMAGNIFY{MAGNIFY TEXT -- note info that magnifies what is happening} 
+% \tpStepPLAYARROW{PLAYARROW TEXT -- denote a starting point, such as when test stations change.
+% This is just more text to see what happens when there are 3 or 4 lines of text w.r.t. centering of icon.
+% These text blocks should be short, but, could be long, so this checks to see what happens with 5 or 6 lines of text.}
+% \tpStepBANG{Prepare external casing for waterproof testing}% 
+% \tpStepSHOCK{SHOCK TEXT -- denote a HAZARD}
+% \tpStepRADIATION{RADIATION TEXT -- denote an EXTREME HAZARD} 
+% \tpStepQUESTION{QUESTION TEXT -- ensure a question is answered} 
+% \tpStepBULLSEYE{BULLSEYE TEXT -- denote the end of a mini-sequence}
+%
+\tpStep%{Action}{Expected Result}{Space to record results}
+{Let soil dry out}
+{Soil Moisture sensor reads accurate soil moisture levels. After 5-minutes of measuring soil moisture levels above 650, the irrigation system will activate until moisture levels are measured at 450 or below.}
+{20pt}
+{loc:Step1}
+%
+% \tpStepLabeled%{Action}{Expected Result}{Space to record results}{label for use in \reference{}}
+% {Lower temperature back to room temperature}
+% {Soil Moisture sensor reads accurate temperature. Irrigation system continues to run}
+% {20pt}
+% {loc:Step2}
+%
+% This one shows how to insert an image in the test step;
+% most like to show expected results, but can be used as test step to show the step if it makes sense
+% \tpStepLabeled%{Action}{Expected Result}{Space to record results}{label for use in \reference{}}
+% {Run python test script and record the number of packets sent and received.}
+% {Packets are sent to and received by the Raspberry Pi Pico W.}
+% {20pt}
+% {loc:Step3}
+%
+% This one shows how to insert an image in the test step;
+% most like to show expected results, but can be used as test step to show the step if it makes sense
+% \tpStepLabeled%{Action}{Expected Result}{Space to record results}{label for use in \reference{}}
+% {\tpStepFigure{images/KNEAD_UnderConstruction_100dpi_6.5inchesWide.eps}{1.0in}}
+% {Labeled step 4 works!}
+% {20pt}
+% {loc:Step4}
+%
+%RECORD POST-TEST INFORMATION
+\input{KNEAD_PostTestInfo.tex}%from $TEXINPUTS; make a local copy and adjust as appropriate.
+%
+}%6%-STEPS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
